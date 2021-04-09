@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_file"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.aplikacja_pogodowa.View.Menu"
+        android:label="@string/fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_normalFragment"
+            app:destination="@id/normalFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_oldFragment"
+            app:destination="@id/elderlyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/normalFragment"
+        android:name="com.example.aplikacja_pogodowa.View.weather_normal"
+        android:label="@string/fragment_normal"
+        tools:layout="@layout/fragment_weather_normal">
+        <action
+            android:id="@+id/action_normalFragment_to_oldFragment"
+            app:destination="@id/elderlyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elderlyFragment"
+        android:name="com.example.aplikacja_pogodowa.View.weather_old"
+        android:label="@string/fragment_elderly"
+        tools:layout="@layout/fragment_weather_old">
+        <action
+            android:id="@+id/action_oldFragment_to_normalFragment"
+            app:destination="@id/normalFragment" />
+    </fragment>
+
+
+</navigation>
